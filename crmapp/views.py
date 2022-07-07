@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from . models import Lead, Agent, User
-
+from . forms import LeadCreateForm
 def view(request):
-    return render(request, 'leads-view.html',{})
+    lead = Lead.objects.all()
+    return render(request, 'leads-view.html',{lead:lead})
