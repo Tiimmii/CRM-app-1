@@ -4,7 +4,7 @@
     <li>
         <img src="{{lead.image.url}}"> <br>
         
-        <h3>{{lead.first_name}}{{lead.last_name}}</h3> <h3>age: {{lead.age}} agent:{{lead.agent}}</h3>
+        <a href="{% url 'leads:details' lead.pk %}"><h3>{{lead.first_name}}{{lead.last_name}}</h3></a>
         
         {% empty %}
         <h1>MMMMMMM no Leads at this time</h1>
