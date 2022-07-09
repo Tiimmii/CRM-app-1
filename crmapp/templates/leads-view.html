@@ -1,11 +1,14 @@
 <h1>HELLO</h1>
 <ul>
+    {% for lead in lead %}
     <li>
-        {% for lead in lead %}
-        <h3>{{lead.first_name}}{{lead.last_name}}</h3> age:{{lead.age}} agent:{{lead.agent}}
+        <img src="{{lead.image.url}}"> <br>
+        
+        <h3>{{lead.first_name}}{{lead.last_name}}</h3> <h3>age: {{lead.age}} agent:{{lead.agent}}</h3>
+        
         {% empty %}
         <h1>MMMMMMM no Leads at this time</h1>
-        {% endfor %}
-
+        
     </li>
+    {% endfor %}
 </ul>
