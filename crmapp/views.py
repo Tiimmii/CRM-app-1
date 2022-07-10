@@ -17,11 +17,11 @@ def create(request):
     if request.method == 'POST':
         form=LeadCreateForm(request.POST)
         if form.is_valid():
-            form.save()    
+            form.save()
             return redirect('leads:view')
         else:
-            messages.info('unsuccessful :(')
-            return redirect('leads:create')
+            messages.info(request,'unsuccessful :(')
+            return redirect('leads:view')
     
     else:
         return render(request, 'leads-create.html', {'form':form})

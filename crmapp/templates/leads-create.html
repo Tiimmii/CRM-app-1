@@ -1,5 +1,14 @@
+<style>
+    h5{
+        color: red;
+    }
+</style>
+
 <h1>HELLO</h1>
-<form method="POST", enctype="multipart/form-data">
+<form method="POST" action="">
+    {% for message in message %}
+<h5>{{message}}</h5>
+{% endfor %}
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit">
