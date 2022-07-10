@@ -20,7 +20,7 @@ def create(request):
             form.save()
             return redirect('leads:view')
         else:
-            messages.info(request,'unsuccessful :(')
+            messages.info(request,'unsuccessful')
             return redirect('leads:view')
     
     else:
